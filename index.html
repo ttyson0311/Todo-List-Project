@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Alice" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+
+</head>
+<body>
+		<div id="header"> TO DO LIST</div>
+
+<div id="main">
+	<div id = "top"> 
+		<div>
+	<input type="text" name="Add Todo" id="addTodoTextInput">
+	<button  id = "addButton" onclick="handlers.addTodo()">Add</button>
+	</div>
+	</div>
+
+	<div>
+
+	<button class="btn" type="reset" toggltype="button" onclick="handlers.toggleAll()"><i class="fas fa-angle-down"></i> </button>
+	</div>
+
+
+<!-- 	<div>
+	<input id = "changeTodoPositionInput"type="number">
+	<input id="changeTodoTextInput" type="text">
+	<button onclick="handlers.changeTodo()">Change</button">
+	"	</div> -->
+
+<!-- 	<div>
+	<input id = "toggleCompletedPositionInput"type="number">
+	<button onclick="handlers.toggleCompleted()">Complete</button>
+	</div> -->
+
+	<ul></ul>
+</div>
+
+	<script type="text/javascript" src="todo.js"></script>
+
+</body>
+
+
+</html>
