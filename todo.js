@@ -1,3 +1,4 @@
+var completedTaskHolder = document.getElementById('completed-task');
 
 ///•	Should store the todos array on an object
 var todoList = {
@@ -7,6 +8,7 @@ var todoList = {
 		this.todos.push({
 			todoText: todoText,
 			completed:false
+
 		});
 	},
 	//•	Should have a change todo method
@@ -47,6 +49,7 @@ var todoList = {
 
 			});
 		}
+
 	};
 
 
@@ -93,7 +96,6 @@ var handlers = {
 	toggleAll: function(){
 	todoList.toggleAll();
 	view.displayTodos();
-
 }
 
 };
@@ -102,63 +104,61 @@ var handlers = {
 
 var view = { 
 
+	
 	displayTodos: function () {
+
 		//select the unordered list in html
 	var todosUl = document.querySelector('ul');
 	//clearing the ul element
 	todosUl.innerHTML= '';
-	//loop through each todo item
+	//loop through each todo item`1																																														```
+
 	todoList.todos.forEach(function(todo, position) {
 		//create a list item
 		var todoLi = document.createElement('li');
-
-		//create mew empty variable
-		var todoTextWithCompletion = '';
-		//if items are completed marek as true
-			if (todo.completed === true) {
-				todoTextWithCompletion = '(x)' + todo.todoText
-			}else {
-
-				todoTextWithCompletion = '( )' + todo.todoText		
-			}
-			
-				
+		
+     	
 		todoLi.id = position;
 			//.textContent grabs the text content of the element
-		todoLi.textContent = todoTextWithCompletion;
+		todoLi.textContent = todo.todoText;
 		//append the li to the ul'
 		todoLi.appendChild(this.createDeleteButton());
-		todoLi.appendChild(this.createCompletedButton());
-
+		todoLi.appendChild(this.createTodoCheckBox());
 		todosUl.appendChild(todoLi);
 		}, this);
-	
 },
+
+	
+createTodoCheckBox: function () {
+var createTodoCheckBox = document.createElement("INPUT");
+		createTodoCheckBox.setAttribute("type", "checkbox")
+		createTodoCheckBox.style.left = '100px';
+		createTodoCheckBox.className = 'createTodoCheckBox'
+	return createTodoCheckBox;
+	},
+
+
+
 	createDeleteButton: function () {
 		var deleteButton = document.createElement('BUTTON');
 		deleteButton.textContent = 'Delete';
 		deleteButton.className = 'deleteButton';
 		return deleteButton;
 },
-	createCompletedButton: function () {
-		var completeButton = document.createElement('BUTTON');
-		completeButton.textContent = 'Completed';
-		completeButton.className = 'completeButton';
-		return completeButton;
-	},
 
 	setUpEventListeners: function() {
 	var todosUl = document.querySelector('ul');
-
 	todosUl.addEventListener('click', function(event){
 	var elementClicked = event.target;
 	
 	if (elementClicked.className === 'deleteButton') {
 		handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
 	} else if
-		(elementClicked.className === 'completeButton') {
-		handlers.toggleCompleted(parseInt(elementClicked.parentNode.id));
-	};
+		(elementClicked.className === 'todoCheckBox') {
+		handlers.toggleCompleted(parseInt(elementClicked.parentNode.id))
+		view.createTodoCheckBox(todoCheckBox.checked = true);
+}
+
 });
 	}
 };

@@ -12,20 +12,21 @@
 
 </head>
 <body>
-		<div id="header"> TO DO LIST</div>
+		<div id="header"> TODO LIST</div>
+		<div id="sub-header">Welcome To My Todo List App</div>
 
 <div id="main">
 	<div id = "top"> 
 		<div>
 	<input type="text" name="Add Todo" id="addTodoTextInput">
-	<button  id = "addButton" onclick="handlers.addTodo()">Add</button>
+	<button  id = "addButton" onclick="handlers.addTodo()">Submit</button>
 	</div>
 	</div>
 
 	<div>
 
-	<button class="btn" type="reset" toggltype="button" onclick="handlers.toggleAll()"><i class="fas fa-angle-down"></i> </button>
-	</div>
+<!-- 	<button class= 'completeAll' class="btn" type="reset" toggltype="button" onclick="handlers.toggleAll()"><i class="fas fa-angle-down"></i> </button>
+	</div> -->
 
 
 <!-- 	<div>
@@ -39,7 +40,8 @@
 	<button onclick="handlers.toggleCompleted()">Complete</button>
 	</div> -->
 
-	<ul></ul>
+	<ul>
+	</ul>
 </div>
 
 	<script type="text/javascript" src="todo.js"></script>
